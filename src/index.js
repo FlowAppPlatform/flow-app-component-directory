@@ -3,6 +3,17 @@ import React from 'react';
 import AppComponent from 'flow-app-component';
 
 class DirectoryComponent extends AppComponent {
+  static properties = {
+    iconUrl: '/assets/images/text-component.svg',
+    name: 'Directory',
+    type: 'ui-component',
+    category: 'Wrappers',
+    parent: null,
+    showOnComponentsPanel: false,
+    isValuable: true,
+    allowsChildren: true
+  };
+
   constructor() {
     super();
     const newState = {
@@ -29,14 +40,8 @@ class DirectoryComponent extends AppComponent {
           ],
         },
       ],
-      iconUrl: '/assets/images/text-component.svg',
-      name: 'Directory',
-      type: 'ui-component',
-      category: 'Wrappers',
-      parent: null,
-      showOnComponentsPanel: false,
-      isValuable: true,
-      allowsChildren: true,
+
+      ...DirectoryComponent.properties
     };
 
     this.state = Object.assign(this.state, newState); // merge two states together, and dont lose any parent state properties.
