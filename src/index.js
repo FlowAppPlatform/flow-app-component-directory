@@ -37,6 +37,7 @@ class DirectoryComponent extends AppComponent {
       showOnComponentsPanel: false,
       isValuable: true,
       allowsChildren: true,
+      allowedChildTypes: ['page'],
     };
 
     this.state = Object.assign(this.state, newState); // merge two states together, and dont lose any parent state properties.
